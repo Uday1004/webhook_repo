@@ -1,0 +1,6 @@
+# db.py
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://localhost:27017/")
+db = client.github_events
+events_collection = db.events
