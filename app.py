@@ -2,8 +2,11 @@
 from flask import Flask, request, jsonify
 from db import events_collection
 from events_handler import parse_event
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
